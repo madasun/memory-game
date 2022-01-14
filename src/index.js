@@ -3,53 +3,53 @@ document.addEventListener('DOMContentLoaded',() =>{
     //card options
     const cardArray = [
         {
-            name: 'fries',
-            img: 'src/images/fries.png'
+            name: 'car',
+            img: 'src/images/car.png'
         },
         {
-            name: 'cheeseburger',
-            img: 'src/images/cheeseburger.png'
+            name: 'earbuds',
+            img: 'src/images/earbuds.png'
         },
         {
-            name: 'icecream',
-            img: 'src/images/ice-cream.png'
+            name: 'glasses',
+            img: 'src/images/glasses.png'
         },
         {
-            name: 'pizza',
-            img: 'src/images/pizza.png'
+            name: 'key',
+            img: 'src/images/key.png'
         },
         {
-            name: 'milkshake',
-            img: 'src/images/milkshake.png'
+            name: 'phone',
+            img: 'src/images/phone.png'
         },
         {
-            name: 'hotdog',
-            img: 'src/images/hotdog.png'
+            name: 'wallet',
+            img: 'src/images/wallet.png'
         },
 
         {
-            name: 'fries',
-            img: 'src/images/fries.png'
+            name: 'car',
+            img: 'src/images/car.png'
         },
         {
-            name: 'cheeseburger',
-            img: 'src/images/cheeseburger.png'
+            name: 'earbuds',
+            img: 'src/images/earbuds.png'
         },
         {
-            name: 'icecream',
-            img: 'src/images/ice-cream.png'
+            name: 'glasses',
+            img: 'src/images/glasses.png'
         },
         {
-            name: 'pizza',
-            img: 'src/images/pizza.png'
+            name: 'key',
+            img: 'src/images/key.png'
         },
         {
-            name: 'milkshake',
-            img: 'src/images/milkshake.png'
+            name: 'phone',
+            img: 'src/images/phone.png'
         },
         {
-            name: 'hotdog',
-            img: 'src/images/hotdog.png'
+            name: 'wallet',
+            img: 'src/images/wallet.png'
         }
 
     ]

@@ -1,7 +1,15 @@
 .grid {
     display: flex;
     flex-wrap: wrap;
-    width: 400px;
-    height: 300px;
-    border: solid black 1px;
+    align-items: center;
+    justify-content: space-between;
+    width: 650px;
+    height: 500px;
+    border: none;
+    background-color: rgb(255, 255, 255);
+}
+
+img {
+    width: 150px;
+    height: 150px;
 }
