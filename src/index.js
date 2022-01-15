@@ -58,10 +58,25 @@ document.addEventListener('DOMContentLoaded',() =>{
     console.log(cardArray)
 
     const grid = document.querySelector('.grid')
-    const resultDisplay = document.querySelector('#result')
+    const resultDisplay = document.querySelector('#winner')
+    const attemptsHolder = document.querySelector('.attemptsHolder')
+    const foundHolder = document.querySelector('.foundHolder')
+    const timerHolder = document.querySelector('.timerHolder')
+    const cardsInGame = 12
+ 
+    let attempts = 0
+    let foundCards = 0
+    attemptsHolder.textContent = attempts
+    foundHolder.textContent = foundCards
+    timerHolder.innerHTML = "0 mins 0 secs"
+  
+    second = 0;
+    minute = 0;
+    hour = 0;
     let cardsChosen = []
     let cardsChosenIds = []
     let cardsWon = []
+    
 
     //creating the board
     function createBoard(){
@@ -74,6 +89,7 @@ document.addEventListener('DOMContentLoaded',() =>{
         }
     }
 
+    
 
 //flip the card
     function flipCard() {
@@ -88,6 +104,7 @@ document.addEventListener('DOMContentLoaded',() =>{
 
 //check for matches
     function checkForMatch() {
+        attempts++
         const cards = document.querySelectorAll('img')
         const optionOneId = cardsChosenIds[0]
         const optionTwoId = cardsChosenIds[1]
@@ -98,23 +115,49 @@ document.addEventListener('DOMContentLoaded',() =>{
             cards[optionOneId].setAttribute('src', 'src/images/blank.png')
             cards[optionTwoId].setAttribute('src', 'src/images/blank.png')
         } else if (cardsChosen[0] == cardsChosen[1]){
-            alert('You have found a match!')
-            cards[optionOneId].setAttribute('src', 'src/images/white.png')
-            cards[optionTwoId].setAttribute('src', 'src/images/white.png')
+            foundCards++
             cards[optionOneId].removeEventListener('click', flipCard)
             cards[optionTwoId].removeEventListener('click', flipCard)
             cardsWon.push(cardsChosen)
         } else {
-            cards[optionOneId].setAttribute('src', 'src/images/blank.png')
             cards[optionTwoId].setAttribute('src', 'src/images/blank.png')
-            alert('Sorry, try again!')
+            cards[optionOneId].setAttribute('src', 'src/images/blank.png')
         }
+  
         cardsChosen = []
         cardsChosenIds = []
-        resultDisplay.textContent = cardsWon.length
-        if (cardsWon.length === cardArray.length/2) {
-            resultDisplay.textContent = 'Congratulations! You won!'
+        attemptsHolder.textContent = attempts
+        foundHolder.textContent = foundCards
+      
+        if (attempts == 1 || foundCards == 1) {
+            startTimer()
         }
+
+        var second = 0
+            minute = 0
+            hour = 0
+        var timerHolder = document.querySelector(".timerHolder");
+        var interval;
+        
+        function startTimer() {
+            interval = setInterval(function () {
+               timerHolder.innerHTML = minute + " mins " + second + " secs";
+                 second++;
+        if (second == 60) {
+              minute++;
+                 second = 0;
+    }
+        if (minute == 60) {
+              hour++;
+                 minute = 0;
+    }
+  }, 1000);
+}
+      
+        if (cardsWon.length === cardArray.length/2) {
+             resultDisplay.textContent = 'Congratulations! You won!'
+        }
+        
     }
 
     createBoard()
