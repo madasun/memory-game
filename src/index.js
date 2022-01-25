@@ -62,7 +62,8 @@ const resultDisplay = document.querySelector('#winner')
 const attemptsHolder = document.querySelector('.attemptsHolder')
 const foundHolder = document.querySelector('.foundHolder')
 const timerHolder = document.querySelector('.timerHolder')
-const cardsInGame = 12
+// const endMessage = document.querySelector('.endMessage')
+
 
 let attempts = 0
 let foundCards = 0
@@ -109,9 +110,7 @@ var hour = 0
 var interval
 
 function startTimer() {
-    console.log("timerStarted")
     interval = setInterval(function () {
-        console.log("timeTimtime")
         timerHolder.innerHTML = minute + "m " + second + "s"
         second++
         if (second == 60) {
@@ -138,7 +137,7 @@ function checkForMatch() {
 
     if (optionOneId == optionTwoId)
     {
-        alert('You have clicked the same image!')
+        alert('Oops, you clicked the same image')
         cards[optionOneId].setAttribute('src', 'images/blank.png')
         cards[optionTwoId].setAttribute('src', 'images/blank.png')
     } else if (cardsChosen[0] == cardsChosen[1]){
@@ -161,10 +160,60 @@ function checkForMatch() {
     }
 
     if (cardsWon.length === cardArray.length/2) {
-        resultDisplay.textContent = 'Congratulations! You won!'
+        resultDisplay.textContent = 'Congrats! You won!'
+        document.body.classList.add('overlay-is-open')
         stopTimer()
     }
 }
 
+
 createBoard()
+
+
+
+function removeCard() {
+	while (grid.hasChildNodes()) {
+		grid.removeChild(grid.firstChild)
+	}
+}
+
+const resetGame = document.getElementById('resetBtn')
+resetGame.addEventListener('click', startOver)
+
+function startOver() {
+    stopTimer();
+    startTimer = false
+    second = 0
+    minute = 0
+    timerHolder.innerHTML = "0m 0s"
+
+    attempts = 0
+    attemptsHolder.innerHTML = attempts
+
+    foundCards = 0
+    foundHolder.innerHTML = 0
+
+    resultDisplay.innerHTML = ''
+
+    cardsChosen = 0
+    cardsWon = 0
+
+    document.body.classList.remove('overlay-is-open')
+
+    removeCard()
+    
+    createBoard()
+
+    
+    console.log('beep beep imma sheep')
+   
+}
+
 })
+
+
+
+// if (startTimer === false) {
+//     startTimer = true; 
+//     timer();}
+

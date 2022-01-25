@@ -1,19 +1,16 @@
-html,
 body {
-	background: url("seamless-pattern.jpg") #ADD2EB;
+	background: url("seamless-pattern2.jpg") #d2dcff;
     background-repeat: repeat;
     height: 100vh;
     font-family: 'Roboto', sans-serif;
-	color: #0C2427;
+    font-size: 16px;
+	color: #426cdb;
 	display: flex;
 	justify-content: center;
 }
 
-.centered {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
+
+
 
 .grid {
     display: flex;
@@ -31,25 +28,24 @@ body {
 #winner {
     font-size: 25px;
     font-weight: 600;
+    color: #007FD9;
 }
 
 img.card {
     width: 150px;
     height: 150px;
-	filter: drop-shadow(0 3px 5px rgb(184, 184, 209));
+	filter: drop-shadow(2px 3px 3px rgb(184, 184, 209));
 }
 
 .edition {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
 }
-
-
 
 .container {
 	background: #fff;
 	border-radius: 10px;
-	color: #000;
+	color: #000932;
     width: 400px;
     height: auto;
 	padding: 6px;
@@ -57,7 +53,92 @@ img.card {
     margin-bottom: 6px;
 }
 
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    line-height: 30px;
+}
+
+.centered-ed {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 45px;
+    margin-top: -15px;
+    text-align: center;
+}
 
 .timer {
 	font-size: 1em;
+}
+
+
+#resetBtn {
+    border: none;
+    line-height: 0px;
+    width: 175px;
+    padding-top: 8px;
+    border-radius: 15px;
+    background-color: #4b52bb;
+    font-size: 16px;
+    color: #FFF;
+}
+
+#resetBtn:active {
+    transform: scale(0.90);
+  }
+
+#resetBtn:hover {
+    transition-duration: 0.1s;
+    background-color: #2a3088;
+  }
+
+  
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, .82);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    visibility: hidden;
+    transition: all .33s ease-out;
+    transform: scale(1.2);
+}
+
+body.overlay-is-open .overlay {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+
+@media only screen and (max-width: 600px) {
+    .grid {
+        display: flex;
+        flex-flow: row wrap;
+        width: 320px;
+        height: auto;
+        border: none;
+        padding: 25px;
+        border-radius: 25px;
+        background-color: white;   
+    }
+
+    .container {
+        background: #fff;
+        border-radius: 10px;
+        color: #000;
+        width: 200px;
+        height: auto;
+        padding: 6px;
+        margin-top: 6px;
+        margin-bottom: 6px;
+    }
+    
 }
