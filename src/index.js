@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded',() =>{
     
-//card options
+//the cards and their image sources
 const cardArray = [
     {
         name: 'car',
@@ -58,11 +58,9 @@ cardArray.sort(() => 0.5 - Math.random())
 console.log(cardArray)
 
 const grid = document.querySelector('.grid')
-const resultDisplay = document.querySelector('#winner')
 const attemptsHolder = document.querySelector('.attemptsHolder')
 const foundHolder = document.querySelector('.foundHolder')
 const timerHolder = document.querySelector('.timerHolder')
-// const endMessage = document.querySelector('.endMessage')
 
 
 let attempts = 0
@@ -93,14 +91,17 @@ function createBoard(){
 
 
 
-//flip the card
 function flipCard() {
-    let cardId = this.getAttribute('data-id')
-    cardsChosen.push(cardArray[cardId].name)
-    cardsChosenIds.push(cardId)
-    this.setAttribute('src', cardArray[cardId].img)
-    if (cardsChosen.length === 2){
-        setTimeout(checkForMatch, 500)
+    //added the if statement to prevent card(s) from getting stuck open when multiples are clicked too quickly
+    if (cardsChosen.length < 2) {
+        let cardId = this.getAttribute('data-id')
+        cardsChosen.push(cardArray[cardId].name)
+        cardsChosenIds.push(cardId)
+        this.setAttribute('src', cardArray[cardId].img)
+        if (cardsChosen.length === 2){
+            setTimeout(checkForMatch, 700)
+        }
+        this.classList.toggle('flip');
     }
 }
 
@@ -108,6 +109,7 @@ var second = 0
 var minute = 0
 var hour = 0
 var interval
+
 
 function startTimer() {
     interval = setInterval(function () {
@@ -128,7 +130,7 @@ function stopTimer() {
     clearInterval(interval)
 }
 
-//check for matches and start timer
+//check for matches and start the timer after first attempt
 function checkForMatch() {
     attempts++
     const cards = document.querySelectorAll('img.card')
@@ -137,17 +139,18 @@ function checkForMatch() {
 
     if (optionOneId == optionTwoId)
     {
-        alert('Oops, you clicked the same image')
         cards[optionOneId].setAttribute('src', 'images/blank.png')
-        cards[optionTwoId].setAttribute('src', 'images/blank.png')
     } else if (cardsChosen[0] == cardsChosen[1]){
         foundCards++
         cards[optionOneId].removeEventListener('click', flipCard)
         cards[optionTwoId].removeEventListener('click', flipCard)
         cardsWon.push(cardsChosen)
     } else {
-        cards[optionTwoId].setAttribute('src', 'images/blank.png')
-        cards[optionOneId].setAttribute('src', 'images/blank.png')
+        //change the image after the flip animation happens
+        setTimeout(() => {cards[optionOneId].setAttribute('src', 'images/blank.png')}, 200)
+        cards[optionOneId].classList.toggle('flip')
+        setTimeout(() => {cards[optionTwoId].setAttribute('src', 'images/blank.png')}, 200)        
+        cards[optionTwoId].classList.toggle('flip')
     }
 
     cardsChosen = []
@@ -160,7 +163,6 @@ function checkForMatch() {
     }
 
     if (cardsWon.length === cardArray.length/2) {
-        resultDisplay.textContent = 'Congrats! You won!'
         document.body.classList.add('overlay-is-open')
         stopTimer()
     }
@@ -170,7 +172,7 @@ function checkForMatch() {
 createBoard()
 
 
-
+//display a congrats overlay upon winning and give option to reset the game
 function removeCard() {
 	while (grid.hasChildNodes()) {
 		grid.removeChild(grid.firstChild)
@@ -181,8 +183,6 @@ const resetGame = document.getElementById('resetBtn')
 resetGame.addEventListener('click', startOver)
 
 function startOver() {
-    stopTimer();
-    startTimer = false
     second = 0
     minute = 0
     timerHolder.innerHTML = "0m 0s"
@@ -193,10 +193,10 @@ function startOver() {
     foundCards = 0
     foundHolder.innerHTML = 0
 
-    resultDisplay.innerHTML = ''
 
-    cardsChosen = 0
-    cardsWon = 0
+    cardsChosen = []
+    cardsChosenIds = []
+    cardsWon = []
 
     document.body.classList.remove('overlay-is-open')
 
@@ -204,16 +204,7 @@ function startOver() {
     
     createBoard()
 
-    
-    console.log('beep beep imma sheep')
    
 }
 
 })
-
-
-
-// if (startTimer === false) {
-//     startTimer = true; 
-//     timer();}
-
