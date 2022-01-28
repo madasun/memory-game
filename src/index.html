@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat+Alternates:wght@300;400;600&display=swap" rel="stylesheet"> 
+        <script src="index.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Memory Game</title>
+    </head>
+    <body>
+    
+       
+    
+        <div class="centered blur">
+                 
+            <div class="centered">
+                <img src="images/game-title.png" alt="Memory Match" class="banner">
+            </div>
+
+            <div class="centered-ed">
+                <span class="edition">Have you seen my _____? [Edition]</span>
+            </div>
+
+            <div class="container centered">
+                <b><span class="foundHolder"></span>/6</b> Found in
+                <b><span class="attemptsHolder"></span></b> Move(s)
+            </div>
+            
+            <div class="container centered">
+                <b>Time:</b> 
+                <span class="timerHolder"></span>                                      
+            </div>
+            
+             <div class="grid centered"></div>
+
+        </div>
+ 
+        <div class="overlay">
+            <div class="overlay-inner">
+                <p id="congrats">Congrats! You won!</p>
+                <button id="resetBtn"><img src="images/reset-btn.png" alt="Reset" height="25px"> 
+                  Reset Board</button>
+            </div>
+        </div>
+       
+
+    </body>
+</html>
