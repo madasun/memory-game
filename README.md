@@ -62,13 +62,17 @@ Features I thought about and would add in the future if I could:
 ![After](https://raw.githubusercontent.com/madasun/memory-game/main/src/images/gameAfter.png)
 
 # Resources
-- [Code with Ania Kubów](https://youtu.be/Xm4BObh4MhI)
+- [Code with Ania Kubów](https://www.youtube.com/channel/UC5DNytAJ6_FISueUfzZCVsw)
 
-- [Code with Burt](https://youtu.be/_T82DJ6IqcQ)
+- [Code with Burt](https://www.youtube.com/channel/UCiSGXbul7MoSsG2CVGwCjUQ)
 
-- [Code Sketch](https://www.youtube.com/watch?v=c_SMmEea8pw)
+- [Code Sketch](https://www.youtube.com/channel/UCHFmShpjG-8N52O0JD2ut3A)
 
-- ✨[Google](https://www.google.com/)✨
+- [Codepen.io](https://codepen.io/)
+
+- [Adobe Color](https://color.adobe.com/create/color-wheel)
+
+- so much [Google](https://www.google.com/) 
 
 
 # Credit
@@ -76,5 +80,5 @@ Features I thought about and would add in the future if I could:
 - Background image from [Toptal.com](https://www.toptal.com/)
 - All other images my own
 
-
-Any feedback is welcome!
+___
+Any feedback is welcome! Thank you for visiting!
