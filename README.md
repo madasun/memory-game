@@ -26,13 +26,13 @@ After improving the game's ease of use I wanted to make more superficial changes
 
 To challenge myself further, I looked at other games to figure out what else I could do to enhance my own. I chose to add a timer that starts with the first attempt, a counter that tracks total attempts, and a 3D flip animation to the cards when clicked. I also moved the congratulations message that appears upon winning from the board itself to an overlay that pops up with the "Reset Board" button. 
 
-Adding each new feature to the game was a lesson in itself, and I could have found more and more to add before I deciding enough is enough!
+The addition of each new feature was a lesson in itself, and I could have found more and more to add before deciding enough is enough!
 
 
 # Wins and Blockers
 
 ## Wins
-- I practiced breaking down ideas (or problems) into much smaller bits to make it less overwhelming. ("add cool 3d flip animation" became --> 1. look up resources and tutorials, 2. look for other games using it, 3. try to understand _how_ the way they did it works, etc.)
+- I practiced breaking down ideas (or problems) into much smaller bits to make it less overwhelming. ("add cool 3d flip animation" became --> 1. look up resources and tutorials, 2. look for other games using it, 3. try to understand how their method works, etc.)
 - This project was an awesome intro to coding and, more importantly, ✨problem solving✨. By the end I began to form some understanding of how/why something does what it does. I could see why the flip animation wasn't executing and why the cards would become "stuck" open if clicked too quickly. And fix it!
 
 
@@ -45,8 +45,8 @@ Features I thought about and would add in the future if I could:
 1. add final time and score stats to the pop-up overlay
 2. different color/card and theme options
 3. ways to make the game harder if user wishes, such as 
-- add several new cards
-- swap the current timer to a countdown instead
+- adding many new card sets to find
+- swapping the current timer to a countdown instead
 - example: halloween/zombie theme. you have two minutes to match your survivor gear or you're (zombie) toast!
 
 
