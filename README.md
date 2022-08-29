@@ -1,5 +1,5 @@
 
-![game title](https://raw.githubusercontent.com/madasun/memory-game/main/src/images/game-title.png)
+![game title](src/images/game-title.png)
 
 
 A card matching game. The *"Have you seen my _____?"* edition. 
@@ -55,11 +55,11 @@ Features I thought about and would add in the future if I could:
 
 ## Before
 
-![Before](https://raw.githubusercontent.com/madasun/memory-game/main/src/images/gameBefore.png)
+![Before](src/images/gameBefore.png)
 
 ## After
 
-![After](https://raw.githubusercontent.com/madasun/memory-game/main/src/images/gameAfter.png)
+![After](src/images/gameAfter.png)
 
 # Resources
 - [Code with Ania Kubów](https://www.youtube.com/channel/UC5DNytAJ6_FISueUfzZCVsw)
